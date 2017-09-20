@@ -15,10 +15,9 @@ void brakeLights(uint32_t c, uint16_t wait) {
   delay(wait);
 }
 
-
-void hideAll(){
-  for(int i = 0; i > strip.numPixels();i++){
-   strip.setPixelColor(i, Color(0,0,0));
+void hideAll() {
+  for(int i=0; i<strip.numPixels(); i++) {
+    strip.setPixelColor(i, strip.Color(255, 0, 0, 0));
   }
   strip.show();
 }

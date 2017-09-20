@@ -97,7 +97,7 @@ void loop(void) {
       i = currentX - prevX;
 
       if ((millis() - brakeTime) > BRAKETIMETHRESHOLD) {
-        brakeLights(Color(255,0,0),250);
+        brakeLights(strip.Color(255, 0, 0, 0), 250); // Red
         while (abs(i) > BRAKETHRESHOLD) {
           lsm.read();
           currentX = abs(lsm.accelData.x);
@@ -105,7 +105,8 @@ void loop(void) {
           Serial.println(i);
           delay(100);
         }
-        hideAll();
+        // hideAll();
+        idleLights(255, 50, 0, ledFadeTime); // Orange
         brakeTime = millis();
         i = 0;
         lsm.read();
@@ -118,6 +119,8 @@ void loop(void) {
   delay(200);
 
 }
+
+
 
 
   // idleLights(255, 50, 0, ledFadeTime); // Orange
