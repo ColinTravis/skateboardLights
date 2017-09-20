@@ -10,7 +10,7 @@
 #include <SPI.h>
 
 
-#define BRAKETHRESHOLD        350
+#define BRAKETHRESHOLD        100
 #define BRAKETIMETHRESHOLD    200
 
 
